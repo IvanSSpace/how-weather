@@ -1,16 +1,31 @@
+import * as React from 'react';
+import Head from 'next/head';
 import { AppProps } from 'next/app';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import theme from '@/styles/theme';
+import createEmotionCache from '@/styles/createEmotionCache';
 
-import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
+// Клиентский кэш, общий для всего приложения
+const clientSideEmotionCache = createEmotionCache();
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
 }
 
-export default MyApp;
+export default function MyApp(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  return (
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline сбрасывает стили CSS до согласованного базового уровня */}
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </CacheProvider>
+  );
+}
