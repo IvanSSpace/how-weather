@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import styles from './index.module.scss';
 import Layout from '@/components/layout/Layout';
 import { MainDesktop } from '@/components/MainDesktop';
 import { MainSmallTablet } from '@/components/MainSmallTablet/MainSmallTablet';
@@ -11,7 +12,7 @@ export default function HomePage() {
     <Layout>
       {/* <Seo /> */}
       <main>
-        <section className='h-full w-full bg-slate-400'>
+        <section className={styles.mainContainer}>
           <MainSmallTablet />
           <MainDesktop />
         </section>

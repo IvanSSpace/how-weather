@@ -1,17 +1,11 @@
-import Image from 'next/image';
-
-import styles from './mainSmallTablet.module.scss';
-import { TextField } from '@mui/material';
+import { HeaderSmallTablet } from '@/components/MainSmallTablet/HeaderSmallTablet/HeaderSmallTablet';
+import { Weather } from '@/components/Weather/Weather';
 
 const MainSmallTablet = () => {
   return (
     <div className='lg:hidden'>
-      <div className={styles.mainContainer}>
-        <header className={styles.header}>
-          <Image src='/images/logo.svg' width={70} height={50} alt='logo' />
-          <TextField id='standard-basic' label='Write your city' variant='standard' />
-        </header>
-      </div>
+      <HeaderSmallTablet />
+      <Weather />
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.mainContainer {
+  height: 100vh;
+  width: 100vw;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../public/images/weather/small/rain.png');
+
+  @media (min-width: 768px) {
+    background-image: url('../../public/images/weather/tablet/rain.png');
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url('../../public/images/weather/desktop/rain.png');
+  }
+}

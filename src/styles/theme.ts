@@ -8,6 +8,9 @@ const theme = createTheme({
       main: '#ffffff', // Цвет текста по умолчанию
     },
   },
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif',
+  },
 });
 
 export default theme;
