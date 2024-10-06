@@ -1,3 +1,9 @@
+# памятка по размерам
+
+# проект mobile-first я использую медиа запросы: md 768px / lg 1024px 
+
+
+
 # Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
 
 <div align="center">

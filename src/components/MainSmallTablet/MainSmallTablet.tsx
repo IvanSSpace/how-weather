@@ -1,11 +1,21 @@
+import Image from 'next/image';
+
+import styles from './mainSmallTablet.module.scss';
+
 import { HeaderSmallTablet } from '@/components/MainSmallTablet/HeaderSmallTablet/HeaderSmallTablet';
-import { Weather } from '@/components/Weather/Weather';
+import { WeatherDisplay } from '@/components/WeatherDisplay/WeatherDisplay';
+import { WeatherInfoSmallTablet } from '@/components/MainSmallTablet/WeatherInfoSmallTablet/WeatherInfoSmallTablet';
 
 const MainSmallTablet = () => {
   return (
-    <div className='lg:hidden'>
-      <HeaderSmallTablet />
-      <Weather />
+    <div className={styles.mainContainer}>
+      <div className={styles.containerTop}>
+        <HeaderSmallTablet />
+        <WeatherDisplay />
+      </div>
+      <div className={styles.containerBottom}>
+        <WeatherInfoSmallTablet />
+      </div>
     </div>
   );
 };
